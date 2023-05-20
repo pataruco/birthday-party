@@ -1,6 +1,7 @@
 name: UI checks
 run-name: ${{ github.actor }} is linting and formatting
 on:
+  workflow_call:
   pull_request:
     branches:
       - 'main'
