@@ -55,8 +55,8 @@ const renderRoute = (
   map: google.maps.Map,
   leg: google.maps.DirectionsLeg,
 ): void => {
-  const startLocation = getPositionFromLeg(leg.start_location);
-  const endLocation = getPositionFromLeg(leg.end_location);
+  // const startLocation = getPositionFromLeg(leg.start_location);
+  // const endLocation = getPositionFromLeg(leg.end_location);
   renderMarker(leg.start_location, startIcon, map, 'You');
   renderMarker(leg.end_location, endIcon, map, 'Party 🎉');
 };
@@ -79,7 +79,6 @@ const renderDirections = (
     {
       origin: from,
       destination: avalon,
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       travelMode: 'DRIVING',
     },
@@ -103,7 +102,6 @@ const renderMap = async () => {
   try {
     from = await getUserCoordinates();
   } catch (error) {
-    // tslint:disable-next-line:no-console
     console.error(error);
   }
 
