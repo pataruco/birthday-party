@@ -1,12 +1,15 @@
 .hamburger {
   cursor: pointer;
   display: inline-block;
-  height: 60px;
-  padding: 1rem;
+  padding: 0.2rem;
   position: fixed;
-  right: 0;
-  top: 0;
+  right: 1rem;
+  top: 1rem;
   z-index: 101;
+  appearance: none;
+  display: block;
+  border: none;
+  background-color: transparent;
 }
 
 .hamburger span {
