@@ -1,7 +1,7 @@
 const arrows = document.querySelectorAll('.js-down-button');
 
 const navigateToSection = (event: Event): void => {
-  if (event && event.target) {
+  if (event?.target) {
     event.preventDefault();
     const nameToGo = (event.target as HTMLAnchorElement).getAttribute(
       'data-section',

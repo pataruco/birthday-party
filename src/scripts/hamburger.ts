@@ -8,7 +8,7 @@ const toggleMenu = (event: Event): void => {
 
 export const navigateToSection = (event: Event): void => {
   toggleMenu(event);
-  if (event && event.target) {
+  if (event?.target) {
     const nameToGo = (event.target as HTMLAnchorElement).getAttribute(
       'data-section',
     );
@@ -28,6 +28,6 @@ if (hamburguerButton) {
   hamburguerButton.addEventListener('click', toggleMenu);
 }
 
-menuItems.forEach(menuItem => {
+menuItems.forEach((menuItem) => {
   menuItem.addEventListener('click', navigateToSection);
 });

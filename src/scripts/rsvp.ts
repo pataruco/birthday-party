@@ -12,10 +12,10 @@ const schema = Joi.string()
   .required();
 
 const messages = {
-  request: `Updating guess list 📡...`,
-  success: `Great see you then 🎊🎉`,
-  failure: `Something went wrong, please try again 😱`,
-  validation: `Please enter a valid email 📩`,
+  request: 'Updating guess list 📡...',
+  success: 'Great see you then 🎊🎉',
+  failure: 'Something went wrong, please try again 😱',
+  validation: 'Please enter a valid email 📩',
 };
 
 const addAttendee = async (event: Event) => {
@@ -43,7 +43,7 @@ const addAttendee = async (event: Event) => {
   }
 };
 
-const focusState = (event: Event) => {
+const focusState = (_event: Event) => {
   emailInput.value = '';
   const classesNames = [
     'event-update-success',
@@ -54,7 +54,7 @@ const focusState = (event: Event) => {
   form.classList.add('focus');
 };
 
-const blurState = (event: Event) => {
+const blurState = (_event: Event) => {
   const classesNames = [
     'event-update-success',
     'event-update-failure',
