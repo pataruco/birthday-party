@@ -10,7 +10,7 @@ Vanilla, HTML, CSS, JavaScript static [website](https://pataruco.github.io/graci
 - [Google Maps directions API](https://developers.google.com/maps/documentation/javascript/directions)
 - [Google Calendar API](https://developers.google.com/calendar/v3/reference)
 
-Build it with Vite on TypeScript and deploy on GitHub pages
+Build it with Vite on TypeScript and deploy it on GitHub pages
 
 ## How to run it?
 
