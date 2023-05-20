@@ -14,23 +14,23 @@ Build it with Vite on TypeScript and deploy on GitHub pages
 
 ## How to run it?
 
-- Install dependencies
+Install dependencies
 
-  ```sh
-  pnpm install
-  ```
+```sh
+pnpm install
+```
 
-- Development
+Development
 
-  ```sh
-  pnpm dev
-  ```
+```sh
+pnpm dev
+```
 
-- Local build
+Local build
 
-  ```sh
-  pnpm build
-  ```
+```sh
+pnpm build
+```
 
 ## Deployment
 
@@ -40,10 +40,11 @@ Create a tagged release
 git tag R.<release name>
 ```
 
-- Push tag
-  ```sh
-  git push --tags
-  ```
+Push tag
+
+```sh
+git push --tags
+```
 
 ## Notes
 
