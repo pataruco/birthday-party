@@ -1,4 +1,5 @@
 import Joi from 'joi';
+
 import { updateEvent } from './update-event';
 
 const form = document.getElementById('js-form') as HTMLFormElement;
