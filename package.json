@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "pnpm rome format *.ts",
+    "format": "pnpm rome format .",
     "lint": "pnpm rome check ."
   },
   "devDependencies": {
