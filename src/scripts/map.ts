@@ -98,16 +98,11 @@ const renderMap = async () => {
     zoom: 15,
   });
 
-  let from: google.maps.LatLng;
-
   try {
-    from = await getUserCoordinates();
+    const from = await getUserCoordinates();
+    renderDirections(from, map);
   } catch (error) {
     console.error(error);
-  }
-
-  if (from) {
-    renderDirections(from, map);
   }
 };
 
