@@ -28,6 +28,6 @@ if (hamburguerButton) {
   hamburguerButton.addEventListener('click', toggleMenu);
 }
 
-menuItems.forEach((menuItem) => {
+for (const menuItem of menuItems) {
   menuItem.addEventListener('click', navigateToSection);
-});
+}

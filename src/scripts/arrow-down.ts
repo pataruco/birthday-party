@@ -18,4 +18,6 @@ const navigateToSection = (event: Event): void => {
   }
 };
 
-arrows.forEach((arrow) => arrow.addEventListener('click', navigateToSection));
+for (const arrow of arrows) {
+  arrow.addEventListener('click', navigateToSection);
+}

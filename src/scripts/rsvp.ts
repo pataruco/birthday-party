@@ -51,7 +51,11 @@ const focusState = (_event: Event) => {
     'event-update-failure',
     'event-validation-error',
   ];
-  classesNames.forEach((name) => document.body.classList.remove(name));
+
+  for (const name of classesNames) {
+    document.body.classList.remove(name);
+  }
+
   form.classList.add('focus');
 };
 
@@ -61,7 +65,10 @@ const blurState = (_event: Event) => {
     'event-update-failure',
     'event-validation-error',
   ];
-  classesNames.forEach((name) => document.body.classList.remove(name));
+
+  for (const name of classesNames) {
+    document.body.classList.remove(name);
+  }
 
   if (emailInput.value.length === 0) {
     form.classList.remove('focus');
