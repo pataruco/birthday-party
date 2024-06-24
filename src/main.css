@@ -1,9 +1,6 @@
 @import './styles/normalize.css';
 @import './styles/constants.css';
 @import './styles/global.css';
-@import './styles/header.css';
-@import './styles/menu.css';
-@import './styles/gracias.css';
 @import './styles/location.css';
 @import './styles/input.css';
 @import './styles/animation.css';

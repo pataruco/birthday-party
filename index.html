@@ -12,31 +12,19 @@
 </head>
 
 <body>
-  <header>
-    <button id="js-menu" class="hamburger" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
   <main>
-    <section id="gracias" class="gracias">
-      <div>
-        <h1>Pedro Martin 46th birthday party🎉</h1>
-        <p>
-          Pedro survived another orbit around the sun!
-        </p>
-        <p>
-          That would not have been possible without your help, love and
-          support. That's why we want to invite you to
-          <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
-        </p>
-      </div>
-      <p class="down-button animated infinite slideInDown">
-        <a href="#" class="js-down-button" data-section="location">⏬</a>
+    <section class="gracias">
+      <h1>Pedro Martin 46th birthday party🎉</h1>
+      <p>
+        Pedro survived another orbit around the sun!
+      </p>
+      <p>
+        That would not have been possible without your help, love and
+        support. That's why we want to invite you to
+        <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
       </p>
     </section>
-    <section id="location">
+    <section>
       <div class="row">
         <div class="column">
           <h2>Location</h2>
@@ -61,44 +49,28 @@
             on Sunday, July 21st of 2024 starting at 2:00 PM.
           </time>
           <p>Bring your +1 and kids</p>
-          <p>Please RSVP 🙏🏻</p>
+          <div id="rsvp">
+            <h2>RSVP</h2>
+            <p>RSVP yes by entering your email</p>
+            <form id="js-form" class="form">
+              <label for="email">Email </label>
+              <span>
+                <input type="email" id="email" autocomplete="off" name="email" />
+                <span></span>
+              </span>
+              <button type="submit">RSVP</button>
+            </form>
+            <footer class="rsvp-footer">
+              <p id="js-rsvp-message"></p>
+            </footer>
+          </div>
         </div>
         <div class="column">
           <div id="js-map" class="map"></div>
         </div>
       </div>
-      <p class="down-button animated infinite slideInDown">
-        <a href="#" class="js-down-button" data-section="rsvp">⏬</a>
-      </p>
     </section>
-    <section id="rsvp">
-      <h2>RSVP</h2>
-      <p>RSVP yes by entering your email</p>
-      <form id="js-form" class="form">
-        <label for="email">Email </label>
-        <span>
-          <input type="email" id="email" autocomplete="off" />
-          <span></span>
-        </span>
-        <button type="submit">RSVP</button>
-      </form>
-      <footer class="rsvp-footer">
-        <p id="js-rsvp-message"></p>
-      </footer>
-    </section>
-    <menu>
-      <ul>
-        <li>
-          <a class="js-nav-menu" data-section="gracias" href="#">Gracias</a>
-        </li>
-        <li>
-          <a class="js-nav-menu" data-section="location" href="#">Location</a>
-        </li>
-        <li>
-          <a class="js-nav-menu" data-section="rsvp" href="#">RSVP</a>
-        </li>
-      </ul>
-    </menu>
+
   </main>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum8HUlhV6EPKJQVzxLeWkNfpHNivlYjc"></script>
   <script type="module" src="/src/main.ts"></script>
