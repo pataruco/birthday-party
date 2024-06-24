@@ -2,15 +2,9 @@
   box-sizing: border-box;
 }
 
-:global html {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  text-size-adjust: 100%;
-}
-
 html,
 body {
-  font-size: 19px;
+  font-size: 1.1875rem;
   line-height: 1.32;
 }
 
@@ -41,11 +35,7 @@ h2 {
 }
 
 section {
-  height: 100vh;
   padding: var(--base-space);
-  border-bottom: 4px dashed;
-  display: flex;
-  flex-direction: column;
 }
 
 section:last-of-type {
