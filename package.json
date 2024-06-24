@@ -11,12 +11,13 @@
     "lint": "pnpm rome check ."
   },
   "devDependencies": {
-    "@types/google.maps": "^3.53.1",
-    "rome": "12.1.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.2"
+    "@biomejs/biome": "1.8.2",
+    "@types/google.maps": "^3.55.10",
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1"
   },
   "dependencies": {
-    "joi": "^17.9.2"
-  }
+    "joi": "^17.13.3"
+  },
+  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
 }

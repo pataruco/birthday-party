@@ -1,8 +1,5 @@
 .gracias > div {
   flex: 1;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   height: 90%;
   max-width: 40em;
   padding: var(--base-space) 0;

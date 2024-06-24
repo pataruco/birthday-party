@@ -1,129 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hello there, I invite you to join me in celebrating my birthday. Please celebrate with us with pizza 🍕 and beers 🍻"
-    />
-    <link rel="icon" href="/src/assets/favicon.ico" />
-    <link rel="stylesheet" href="/src/main.css" />
-    <title>Pedro Martin 45th birthday party 🎉</title>
-  </head>
-  <body>
-    <header>
-      <button id="js-menu" class="hamburger" type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>
-    <main>
-      <section id="gracias" class="gracias">
-        <div>
-          <h1>Pedro Martin 45th birthday party🎉</h1>
-          <p>
-            The last year have been full of challenges and blessings for us, the
-            Martín Blanco family:
-          </p>
-          <ul>
-            <li>
-              <mark class="highlight-red"
-                >Miranda will start reception 👧🏻 🏫
-              </mark>
-            </li>
-            <li>
-              <mark class="highlight-purple"
-                >Peter will start Year 2 👦🏼 🏫
-              </mark>
-            </li>
-            <li>
-              <mark class="highlight-green"
-                >Anita started playing drums again 🥁 🙌🏻.</mark
-              >
-            </li>
-            <li>
-              <mark class="highlight-yellow"
-                >Pedro's birthday 🎂 and have a new job as Tech lead 🤟🏻</mark
-              >
-            </li>
-          </ul>
-          <p>
-            The above would not have been possible without your help, love and
-            support. That's why we want to invite you to
-            <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
-          </p>
-        </div>
-        <p class="down-button animated infinite slideInDown">
-          <a href="#" class="js-down-button" data-section="location">⏬</a>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Hello there, I invite you to join me in celebrating my birthday. Please celebrate with us with pizza 🍕 and beers 🍻" />
+  <link rel="icon" href="/src/assets/favicon.ico" />
+  <link rel="stylesheet" href="/src/main.css" />
+  <title>Pedro Martin 46th birthday party 🎉</title>
+</head>
+
+<body>
+  <header>
+    <button id="js-menu" class="hamburger" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <main>
+    <section id="gracias" class="gracias">
+      <div>
+        <h1>Pedro Martin 46th birthday party🎉</h1>
+        <p>
+          Pedro survived another orbit around the sun!
         </p>
-      </section>
-      <section id="location">
-        <div class="row">
-          <div class="column">
-            <h2>Location</h2>
+        <p>
+          That would not have been possible without your help, love and
+          support. That's why we want to invite you to
+          <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
+        </p>
+      </div>
+      <p class="down-button animated infinite slideInDown">
+        <a href="#" class="js-down-button" data-section="location">⏬</a>
+      </p>
+    </section>
+    <section id="location">
+      <div class="row">
+        <div class="column">
+          <h2>Location</h2>
+          <p>
+            See you at
+            <mark class="highlight-red">
+              <a href="https://www.theavalonlondon.com/" target="_blank">
+                The Avalon
+              </a>
+            </mark>
+          </p>
+          <address>
             <p>
-              See you at
-              <mark class="highlight-red">
-                <a href="https://www.theavalonlondon.com/" target="_blank">
-                  The Avalon
+              <mark class="highlight-green">
+                <a href="https://goo.gl/maps/hKvx812z2yWaGgXw7">
+                  Balham Hill, Balham, London SW12 9EB,
                 </a>
               </mark>
             </p>
-            <address>
-              <p>
-                <mark class="highlight-green">
-                  <a href="https://goo.gl/maps/hKvx812z2yWaGgXw7">
-                    Balham Hill, Balham, London SW12 9EB,
-                  </a>
-                </mark>
-              </p>
-            </address>
-            <time class="highlight-blue" datetime="2023-07-23 14:00:">
-              on Sunday, July 23rd of 2023 starting at 2:00 PM.
-            </time>
-            <p>Bring your +1 and kids</p>
-            <p>Please RSVP 🙏🏻</p>
-          </div>
-          <div class="column">
-            <div id="js-map" class="map"></div>
-          </div>
+          </address>
+          <time class="highlight-blue" datetime="2024-07-21 14:00:">
+            on Sunday, July 21st of 2024 starting at 2:00 PM.
+          </time>
+          <p>Bring your +1 and kids</p>
+          <p>Please RSVP 🙏🏻</p>
         </div>
-        <p class="down-button animated infinite slideInDown">
-          <a href="#" class="js-down-button" data-section="rsvp">⏬</a>
-        </p>
-      </section>
-      <section id="rsvp">
-        <h2>RSVP</h2>
-        <p>RSVP yes by entering your email</p>
-        <form id="js-form" class="form">
-          <label for="email">Email </label>
-          <span>
-            <input type="email" id="email" autocomplete="off" />
-            <span></span>
-          </span>
-          <button type="submit">RSVP</button>
-        </form>
-        <footer class="rsvp-footer">
-          <p id="js-rsvp-message"></p>
-        </footer>
-      </section>
-      <menu>
-        <ul>
-          <li>
-            <a class="js-nav-menu" data-section="gracias" href="#">Gracias</a>
-          </li>
-          <li>
-            <a class="js-nav-menu" data-section="location" href="#">Location</a>
-          </li>
-          <li>
-            <a class="js-nav-menu" data-section="rsvp" href="#">RSVP</a>
-          </li>
-        </ul>
-      </menu>
-    </main>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum8HUlhV6EPKJQVzxLeWkNfpHNivlYjc"></script>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+        <div class="column">
+          <div id="js-map" class="map"></div>
+        </div>
+      </div>
+      <p class="down-button animated infinite slideInDown">
+        <a href="#" class="js-down-button" data-section="rsvp">⏬</a>
+      </p>
+    </section>
+    <section id="rsvp">
+      <h2>RSVP</h2>
+      <p>RSVP yes by entering your email</p>
+      <form id="js-form" class="form">
+        <label for="email">Email </label>
+        <span>
+          <input type="email" id="email" autocomplete="off" />
+          <span></span>
+        </span>
+        <button type="submit">RSVP</button>
+      </form>
+      <footer class="rsvp-footer">
+        <p id="js-rsvp-message"></p>
+      </footer>
+    </section>
+    <menu>
+      <ul>
+        <li>
+          <a class="js-nav-menu" data-section="gracias" href="#">Gracias</a>
+        </li>
+        <li>
+          <a class="js-nav-menu" data-section="location" href="#">Location</a>
+        </li>
+        <li>
+          <a class="js-nav-menu" data-section="rsvp" href="#">RSVP</a>
+        </li>
+      </ul>
+    </menu>
+  </main>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum8HUlhV6EPKJQVzxLeWkNfpHNivlYjc"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
