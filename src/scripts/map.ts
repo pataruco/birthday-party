@@ -97,7 +97,8 @@ const renderMap = async () => {
     center: avalon,
     zoom: 15,
   });
-  let from;
+
+  let from: google.maps.LatLng;
 
   try {
     from = await getUserCoordinates();
