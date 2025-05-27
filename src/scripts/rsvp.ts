@@ -61,8 +61,6 @@ const focusState = (_event: Event) => {
 };
 
 const blurState = (_event: Event) => {
-
-
   for (const name of classesNames) {
     document.body.classList.remove(name);
   }

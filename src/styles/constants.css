@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
 :root {
   /* Fonts */
   --sans-serif: Helvetica, Arial, sans-serif;
-  --cursive: 'Permanent Marker', cursive;
+  --cursive: "Permanent Marker", cursive;
 
   /* Space */
   --base-space: 1.25em;
