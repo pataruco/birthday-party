@@ -18,8 +18,7 @@ body {
       var(--notebook-v-line) var(--base-space),
       var(--notebook-v-line) calc(var(--base-space) + 2px),
       transparent calc(var(--base-space) + 2px)
-    ),
-    linear-gradient(var(--notebook-h-line) 0.1rem, transparent 0.1rem);
+    ), linear-gradient(var(--notebook-h-line) 0.1rem, transparent 0.1rem);
   background-size: 100% 1.32rem;
 }
 
@@ -29,7 +28,8 @@ h2 {
   color: var(--white);
   font-family: var(--sans-serif);
   margin-top: 0;
-  text-shadow: 2px 4px 0 var(--black), -1px -1px 0 var(--black),
+  text-shadow:
+    2px 4px 0 var(--black), -1px -1px 0 var(--black),
     1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
   transform: var(--base-rotation);
   transform-origin: var(--base-transform-origin);
@@ -50,7 +50,7 @@ section:last-of-type {
 }
 
 ul {
-  list-style-image: url('../assets/dot.svg');
+  list-style-image: url("../assets/dot.svg");
 }
 
 img {
