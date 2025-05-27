@@ -19,6 +19,12 @@ const messages = {
   validation: 'Please enter a valid email 📩',
 };
 
+const classesNames = [
+  'event-update-success',
+  'event-update-failure',
+  'event-validation-error',
+];
+
 const addAttendee = async (event: Event) => {
   event.preventDefault();
   renderMessage(messages.request);
@@ -46,11 +52,6 @@ const addAttendee = async (event: Event) => {
 
 const focusState = (_event: Event) => {
   emailInput.value = '';
-  const classesNames = [
-    'event-update-success',
-    'event-update-failure',
-    'event-validation-error',
-  ];
 
   for (const name of classesNames) {
     document.body.classList.remove(name);
@@ -60,11 +61,7 @@ const focusState = (_event: Event) => {
 };
 
 const blurState = (_event: Event) => {
-  const classesNames = [
-    'event-update-success',
-    'event-update-failure',
-    'event-validation-error',
-  ];
+
 
   for (const name of classesNames) {
     document.body.classList.remove(name);
