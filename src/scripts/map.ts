@@ -46,17 +46,10 @@ const getUserCoordinates = async (): Promise<google.maps.LatLng> => {
   });
 };
 
-const getPositionFromLeg = (position: google.maps.LatLng) => ({
-  lat: position.lat(),
-  lng: position.lng(),
-});
-
 const renderRoute = (
   map: google.maps.Map,
   leg: google.maps.DirectionsLeg,
 ): void => {
-  // const startLocation = getPositionFromLeg(leg.start_location);
-  // const endLocation = getPositionFromLeg(leg.end_location);
   renderMarker(leg.start_location, startIcon, map, 'You');
   renderMarker(leg.end_location, endIcon, map, 'Party 🎉');
 };
@@ -79,11 +72,10 @@ const renderDirections = (
     {
       origin: from,
       destination: avalon,
-      // @ts-ignore
-      travelMode: 'DRIVING',
+      travelMode: 'DRIVING' as google.maps.TravelMode,
     },
-    (result: google.maps.DirectionsResult, status: string) => {
-      if (status === 'OK') {
+    (result: google.maps.DirectionsResult | null, status: string) => {
+      if (status === 'OK' && result) {
         directionsDisplay.setDirections(result);
         const [leg] = result.routes[0].legs;
         renderRoute(map, leg);
