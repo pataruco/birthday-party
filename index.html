@@ -1,79 +1,81 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hello there, I invite you to join me in celebrating my birthday. Please celebrate with us with pizza 🍕 and beers 🍻"
+    />
+    <link rel="icon" href="/src/assets/favicon.ico" />
+    <link rel="stylesheet" href="/src/main.css" />
+    <title>Pedro Martin 48th birthday party 🎉</title>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Hello there, I invite you to join me in celebrating my birthday. Please celebrate with us with pizza 🍕 and beers 🍻" />
-  <link rel="icon" href="/src/assets/favicon.ico" />
-  <link rel="stylesheet" href="/src/main.css" />
-  <title>Pedro Martin 47th birthday party 🎉</title>
-</head>
-
-<body>
-  <main>
-    <section class="gracias">
-      <h1>Pedro Martin 47th birthday party🎉</h1>
-      <p>
-        Pedro survived another orbit around the sun!
-      </p>
-      <p>
-        That would not have been possible without your help, love and
-        support. That's why we want to invite you to
-        <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
-      </p>
-    </section>
-    <section>
-      <div class="row">
-        <div class="column">
-          <h2>Location</h2>
-          <p>
-            See you at
-            <mark class="highlight-red">
-              <a href="https://www.theavalonlondon.com/" target="_blank">
-                The Avalon
-              </a>
-            </mark>
-          </p>
-          <address>
+  <body>
+    <main>
+      <section class="gracias">
+        <h1>Pedro Martin 47th birthday party🎉</h1>
+        <p>Pedro survived another orbit around the sun!</p>
+        <p>
+          That would not have been possible without your help, love and support.
+          That's why we want to invite you to
+          <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
+        </p>
+      </section>
+      <section>
+        <div class="row">
+          <div class="column">
+            <h2>Location</h2>
             <p>
-              <mark class="highlight-green">
-                <a href="https://goo.gl/maps/hKvx812z2yWaGgXw7">
-                  Balham Hill, Balham, London SW12 9EB,
+              See you at
+              <mark class="highlight-red">
+                <a href="https://www.theavalonlondon.com/" target="_blank">
+                  The Avalon
                 </a>
               </mark>
             </p>
-          </address>
-          <time class="highlight-blue" datetime="2025-07-19 14:00:">
-            on Saturday, July 19th of 2025 starting at 2:00 PM.
-          </time>
-          <p>Bring your +1 and kids</p>
-          <div id="rsvp">
-            <h2>RSVP</h2>
-            <p>RSVP yes by entering your email</p>
-            <form id="js-form" class="form">
-              <label for="email">Email </label>
-              <span>
-                <input type="email" id="email" autocomplete="off" name="email" />
-                <span></span>
-              </span>
-              <button type="submit">RSVP</button>
-            </form>
-            <footer class="rsvp-footer">
-              <p id="js-rsvp-message"></p>
-            </footer>
+            <address>
+              <p>
+                <mark class="highlight-green">
+                  <a href="https://goo.gl/maps/hKvx812z2yWaGgXw7">
+                    Balham Hill, Balham, London SW12 9EB,
+                  </a>
+                </mark>
+              </p>
+            </address>
+            <time class="highlight-blue" datetime="2026-07-18 14:00:">
+              on Saturday, July 18th of 2026 starting at 2:00 PM.
+            </time>
+            <p>Bring your +1 and kids</p>
+            <div id="rsvp">
+              <h2>RSVP</h2>
+              <p>RSVP yes by entering your email</p>
+              <form id="js-form" class="form">
+                <label for="email">Email </label>
+                <span>
+                  <input
+                    type="email"
+                    id="email"
+                    autocomplete="off"
+                    name="email"
+                  />
+                  <span></span>
+                </span>
+                <button type="submit">RSVP</button>
+              </form>
+              <footer class="rsvp-footer">
+                <p id="js-rsvp-message"></p>
+              </footer>
+            </div>
+          </div>
+          <div class="column">
+            <div id="js-map" class="map"></div>
           </div>
         </div>
-        <div class="column">
-          <div id="js-map" class="map"></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum8HUlhV6EPKJQVzxLeWkNfpHNivlYjc"></script>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+      </section>
+    </main>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum8HUlhV6EPKJQVzxLeWkNfpHNivlYjc"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

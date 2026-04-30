@@ -61,9 +61,7 @@ select:-webkit-autofill:focus {
 .form button {
   -webkit-appearance: none;
   background-color: var(--white);
-  border: 1px solid var(--black);
   border: 2px solid var(--black);
-  box-shadow: 2px 2px 0 var(--black);
   box-shadow: 3px 3px 0 var(--black);
   display: block;
   outline: none;
