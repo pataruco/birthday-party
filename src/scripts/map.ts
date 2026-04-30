@@ -1,100 +1,125 @@
-const avalon = new google.maps.LatLng({ lat: 51.450616, lng: -0.1480473 });
+const avalon: google.maps.LatLngLiteral = {
+  lat: 51.450616,
+  lng: -0.1480473,
+};
 const mapElement = document.getElementById('js-map') as HTMLDivElement;
-const path =
+const pinPath =
   'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z';
 
 const red = '#FF0000';
 const green = '#00ff00';
 
-const customIcon: google.maps.Symbol = {
-  path,
-  fillOpacity: 1,
-  anchor: new google.maps.Point(0, 0),
-  strokeWeight: 0,
-  scale: 1.25,
-};
+const SVG_NS = 'http://www.w3.org/2000/svg';
 
-const startIcon: google.maps.Symbol = { ...customIcon, fillColor: red };
-const endIcon: google.maps.Symbol = { ...customIcon, fillColor: green };
+const buildMarkerContent = (color: string, label: string): SVGSVGElement => {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('width', '55');
+  svg.setAttribute('height', '75');
+  svg.setAttribute('viewBox', '-27.5 -75 55 75');
+
+  const pin = document.createElementNS(SVG_NS, 'path');
+  pin.setAttribute('d', pinPath);
+  pin.setAttribute('fill', color);
+  pin.setAttribute('transform', 'scale(1.25)');
+  svg.appendChild(pin);
+
+  const text = document.createElementNS(SVG_NS, 'text');
+  text.setAttribute('x', '0');
+  text.setAttribute('y', '-32');
+  text.setAttribute('text-anchor', 'middle');
+  text.setAttribute('fill', '#000');
+  text.setAttribute('font-size', '24');
+  text.setAttribute('font-family', 'Permanent Marker');
+  text.textContent = label;
+  svg.appendChild(text);
+
+  return svg;
+};
 
 const renderMarker = (
-  position: google.maps.LatLng,
-  icon: google.maps.Symbol,
+  position: google.maps.marker.AdvancedMarkerElementOptions['position'],
+  color: string,
   map: google.maps.Map,
   label: string,
-): google.maps.Marker =>
-  new google.maps.Marker({
+): google.maps.marker.AdvancedMarkerElement =>
+  new google.maps.marker.AdvancedMarkerElement({
     position,
     map,
-    icon,
+    content: buildMarkerContent(color, label),
     zIndex: 1000,
-    label: {
-      color: '#000',
-      fontSize: '24px',
-      text: label,
-      fontFamily: 'Permanent Marker',
-    },
   });
 
-const getUserCoordinates = async (): Promise<google.maps.LatLng> => {
-  return new Promise((resolve) => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { coords } = position;
-      const { latitude, longitude } = coords;
-      resolve(new google.maps.LatLng(latitude, longitude));
-    });
+const fallbackOrigin: google.maps.LatLngLiteral = {
+  lat: 51.5074,
+  lng: -0.1278,
+};
+
+const getUserCoordinates = (): Promise<google.maps.LatLngLiteral> =>
+  new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => resolve({ lat: coords.latitude, lng: coords.longitude }),
+      reject,
+      { timeout: 5000 },
+    );
   });
-};
 
-const renderRoute = (
+const renderDirections = async (
+  from: google.maps.LatLngLiteral,
   map: google.maps.Map,
-  leg: google.maps.DirectionsLeg,
-): void => {
-  renderMarker(leg.start_location, startIcon, map, 'You');
-  renderMarker(leg.end_location, endIcon, map, 'Party 🎉');
-};
+): Promise<void> => {
+  const { Route } = (await google.maps.importLibrary(
+    'routes',
+  )) as google.maps.RoutesLibrary;
 
-const renderDirections = (
-  from: google.maps.LatLng,
-  map: google.maps.Map,
-): void => {
-  const directionsService = new google.maps.DirectionsService();
-  const directionsDisplay = new google.maps.DirectionsRenderer({
-    suppressMarkers: true,
+  const { routes } = await Route.computeRoutes({
+    origin: from,
+    destination: avalon,
+    travelMode: 'DRIVING',
+    fields: ['legs', 'path'],
+  });
+
+  if (!routes || routes.length === 0) return;
+  const [route] = routes;
+
+  route.createPolylines({
     polylineOptions: {
       strokeColor: '#ff00bc',
       strokeWeight: 15,
+      map,
     },
   });
-  directionsDisplay.setMap(map);
 
-  directionsService.route(
-    {
-      origin: from,
-      destination: avalon,
-      travelMode: 'DRIVING' as google.maps.TravelMode,
-    },
-    (result: google.maps.DirectionsResult | null, status: string) => {
-      if (status === 'OK' && result) {
-        directionsDisplay.setDirections(result);
-        const [leg] = result.routes[0].legs;
-        renderRoute(map, leg);
-      }
-    },
-  );
+  const [leg] = route.legs ?? [];
+  if (!leg) return;
+  if (leg.startLocation) {
+    renderMarker(leg.startLocation, red, map, 'You');
+  }
+  if (leg.endLocation) {
+    renderMarker(leg.endLocation, green, map, 'Party 🎉');
+  }
 };
 
 const renderMap = async () => {
+  await google.maps.importLibrary('marker');
+
   const map = new google.maps.Map(mapElement, {
     center: avalon,
     zoom: 15,
+    mapId: 'DEMO_MAP_ID',
   });
 
+  let from: google.maps.LatLngLiteral;
   try {
-    const from = await getUserCoordinates();
-    renderDirections(from, map);
+    from = await getUserCoordinates();
   } catch (error) {
-    console.error(error);
+    console.warn('[map] geolocation failed, using fallback origin', error);
+    from = fallbackOrigin;
+  }
+
+  try {
+    await renderDirections(from, map);
+  } catch (error) {
+    console.error('[map] renderDirections failed', error);
   }
 };
 

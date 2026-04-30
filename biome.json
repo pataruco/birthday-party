@@ -1,9 +1,11 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+  "files": {
+    "includes": ["**", "!**/dist", "!**/public", "!**/*.generated.ts"]
+  },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
-    "includes": ["**", "!**/dist/**", "!**/public/**", "!**/*.generated.ts"],
     "rules": {
       "recommended": true
     }
