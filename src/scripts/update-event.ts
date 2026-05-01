@@ -31,10 +31,9 @@ const getEvent = async () => {
 export const updateEvent = async (email: string): Promise<boolean> => {
   const accessToken = await getToken();
   const event = await getEvent();
-  const { attendees } = event;
-  const attendee = { email };
+  const attendees = event.attendees ?? [];
 
-  attendees.push(attendee);
+  attendees.push({ email });
   const response = await fetch(
     `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/${EVENT_ID}?sendUpdates=all`,
     {
