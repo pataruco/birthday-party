@@ -11,11 +11,24 @@ const green = '#00ff00';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-const buildMarkerContent = (color: string, label: string): SVGSVGElement => {
+const buildMarkerContent = (color: string, label: string): HTMLElement => {
+  const container = document.createElement('div');
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.style.alignItems = 'center';
+
+  const labelEl = document.createElement('span');
+  labelEl.textContent = label;
+  labelEl.style.fontFamily = '"Permanent Marker", cursive';
+  labelEl.style.fontSize = '24px';
+  labelEl.style.color = '#000';
+  labelEl.style.whiteSpace = 'nowrap';
+  labelEl.style.lineHeight = '1';
+
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('width', '55');
-  svg.setAttribute('height', '75');
-  svg.setAttribute('viewBox', '-27.5 -75 55 75');
+  svg.setAttribute('height', '60');
+  svg.setAttribute('viewBox', '-27.5 -60 55 60');
 
   const pin = document.createElementNS(SVG_NS, 'path');
   pin.setAttribute('d', pinPath);
@@ -23,17 +36,10 @@ const buildMarkerContent = (color: string, label: string): SVGSVGElement => {
   pin.setAttribute('transform', 'scale(1.25)');
   svg.appendChild(pin);
 
-  const text = document.createElementNS(SVG_NS, 'text');
-  text.setAttribute('x', '0');
-  text.setAttribute('y', '-32');
-  text.setAttribute('text-anchor', 'middle');
-  text.setAttribute('fill', '#000');
-  text.setAttribute('font-size', '24');
-  text.setAttribute('font-family', 'Permanent Marker');
-  text.textContent = label;
-  svg.appendChild(text);
+  container.appendChild(labelEl);
+  container.appendChild(svg);
 
-  return svg;
+  return container;
 };
 
 const renderMarker = (
