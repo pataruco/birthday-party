@@ -14,7 +14,7 @@
     "@biomejs/biome": "2.4.13",
     "@types/google.maps": "^3.64.0",
     "typescript": "^6.0.3",
-    "vite": "^8.0.10"
+    "vite": "^8.0.16"
   },
   "dependencies": {
     "joi": "^18.1.2"
